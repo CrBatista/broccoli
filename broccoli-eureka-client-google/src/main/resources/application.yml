@@ -8,3 +8,9 @@ server:
 broccoli:
   params:
     max-result: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus

@@ -49,6 +49,7 @@ public class ItunesClientApplicationTests {
 
     @Test
     public void shouldRegisterClientInEurekaServer() throws InterruptedException {
+    	Thread.sleep(3000);
         ResponseEntity<String> response = this.testRestTemplate.getForEntity("http://localhost:" + this.port + "/service-instances/itunes-client", String.class);
 
         then(response.getStatusCode()).isEqualTo(HttpStatus.OK);
