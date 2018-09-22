@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: itunes-client
-
-server:
-  port: 8081
