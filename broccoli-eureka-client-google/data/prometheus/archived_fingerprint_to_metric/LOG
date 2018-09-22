@@ -1,0 +1,14 @@
+=============== Sep 22, 2018 (UTC) ===============
+17:01:55.588454 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:01:55.649420 db@open opening
+17:01:55.654151 version@stat F·[] S·0B[] Sc·[]
+17:01:55.658425 syncDir: sync /prometheus/archived_fingerprint_to_metric: invalid argument
+=============== Sep 22, 2018 (UTC) ===============
+17:06:24.309459 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:24.326373 version@stat F·[] S·0B[] Sc·[]
+17:06:24.327072 db@open opening
+17:06:24.329878 journal@recovery F·1
+17:06:24.337378 journal@recovery recovering @1
+17:06:24.346959 version@stat F·[] S·0B[] Sc·[]
+17:06:24.370263 db@janitor F·2 G·0
+17:06:24.370955 db@open done T·43.7128ms
