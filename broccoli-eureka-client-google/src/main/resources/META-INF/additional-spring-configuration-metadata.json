@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "broccoli.params.max-result",
+  "type": "java.lang.String",
+  "description": "The max result for searching on Google API"
+}]}

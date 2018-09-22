@@ -3,4 +3,8 @@ spring:
     name: google-client
 
 server:
-  port: 8082
+  port: 8085
+
+broccoli:
+  params:
+    max-result: 5
