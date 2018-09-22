@@ -28,7 +28,7 @@ public class BookControllerTest {
 	private BookController bookController;
 
 	@Test
-	public void assertTrue() throws Exception {
+	public void searchBooks() throws Exception {
 		List<Book> returnList = new ArrayList<Book>();
         when(bookService.searchBooks(Mockito.anyString())).thenReturn(returnList);
         assertEquals(returnList, bookController.searchBooks(Mockito.anyString()));
