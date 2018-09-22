@@ -20,12 +20,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.broccoli.GoogleClientApplication;
+import com.broccoli.ItunesClientApplication;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GoogleClientApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = ItunesClientApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-public class GoogleClientApplicationTests {
+public class ItunesClientApplicationTests {
 
     private static ConfigurableApplicationContext eurekaServer;
 

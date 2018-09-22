@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class GoogleClientApplication {
+public class ItunesClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GoogleClientApplication.class, args);
+        SpringApplication.run(ItunesClientApplication.class, args);
     }
 }
