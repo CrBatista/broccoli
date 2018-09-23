@@ -33,8 +33,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		http.authorizeRequests()
-				.antMatchers("/users/signin").permitAll()
-				.antMatchers("/users/signup").permitAll()
+				.antMatchers("/actuator/prometheus").permitAll()
+				.antMatchers("/signin").permitAll()
+				.antMatchers("/signup").permitAll()
 				.antMatchers("/h2-console/**/**").permitAll()
 				.anyRequest().authenticated();
 
