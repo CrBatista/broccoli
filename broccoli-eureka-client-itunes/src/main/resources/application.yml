@@ -14,3 +14,8 @@ management:
     web:
       exposure:
         include: prometheus
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/

@@ -17,7 +17,9 @@ services:
       - cadvisor:cadvisor
     depends_on:
       - cadvisor
-      - app
+      - google
+      - itunes
+      - eureka
 
   cadvisor:
     image: google/cadvisor:v0.27.3
@@ -41,22 +43,22 @@ services:
       - ./data/grafana/:/var/lib/grafana
 
   google:
-    build: .
+    build: ../broccoli-eureka-client-google/
     ports:
       - 8084:8084
     volumes:
-      - .:/code
+      - ../broccoli-eureka-client-google/:/code
       
   itunes:
-    build: .
+    build: ../broccoli-eureka-client-itunes/
     ports:
       - 8085:8085
     volumes:
-      - .:/code
+      - ../broccoli-eureka-client-itunes/:/code
       
   eureka:
-    build: .
+    build: ../broccoli-eureka-server/
     ports:
-      - 8081:8081
+      - 8761:8761
     volumes:
-      - .:/code
+      - ../broccoli-eureka-server/:/code

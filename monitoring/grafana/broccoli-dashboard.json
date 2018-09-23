@@ -120,7 +120,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "process_uptime_seconds{kubernetes_pod_name=\"$pod_name\"}",
+              "expr": "process_uptime_seconds{kubernetes_pod_name=\"$pod_name\", instance=\"$instance\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
@@ -457,7 +457,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", level=\"warn\"}",
+              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", instance=\"$instance\", level=\"warn\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
@@ -534,7 +534,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", level=\"debug\"}",
+              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", instance=\"$instance\", level=\"debug\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "",
@@ -612,7 +612,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", level=\"error\"}",
+              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", instance=\"$instance\", level=\"error\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
@@ -689,7 +689,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", level=\"trace\"}",
+              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", instance=\"$instance\", level=\"trace\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
@@ -766,7 +766,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", level=\"info\"}",
+              "expr": "logback_events_total{kubernetes_pod_name=~\"$pod_name\", instance=\"$instance\", level=\"info\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A",
@@ -2345,6 +2345,26 @@
   ],
   "templating": {
     "list": [
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Instance",
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": "label_values(jvm_classes_loaded, instance)",
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
       {
         "allValue": null,
         "current": {},
