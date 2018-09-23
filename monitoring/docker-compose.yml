@@ -74,8 +74,10 @@ services:
     image: postgres:9.4
     volumes:
       - ./docker-entrypoint-initdb.d/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
     environment:
-      - POSTGRES_USER:'broccoli'
-      - POSTGRES_PASSWORD:'broccoli'
-      - POSTGRES_DB:'broccoli'
+      POSTGRES_USER: broccoli
+      POSTGRES_PASSWORD: broccoli
+      POSTGRES_DB: broccoli
     
