@@ -20,7 +20,7 @@ public class AlbumController {
 
 	@GetMapping("/albums/{input}")
 	@ResponseBody
-	@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public List<Album> searchAlbums(@PathVariable("input") String input) {
 		return albumService.searchAlbums(input);
 	}

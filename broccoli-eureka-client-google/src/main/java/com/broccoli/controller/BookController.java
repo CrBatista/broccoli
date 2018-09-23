@@ -20,7 +20,7 @@ public class BookController {
 
 	@GetMapping("/books/{input}")
 	@ResponseBody
-	@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public List<Book> searchBooks(@PathVariable("input") String input) {
 		return bookService.searchBooks(input);
 	}
