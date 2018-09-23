@@ -62,17 +62,8 @@ services:
       - 8761:8761
     volumes:
       - ../broccoli-eureka-server/:/code
-  cas:
-    image: apereo/cas:v5.1.3
-    ports:
-      - "8082:8080"
+
+  postgres:
+    image: postgres:9.4
     volumes:
-      - ./cas/tmp:/root/.m2/repository/
-      - ./cas/cas.properties:/cas-overlay/etc/cas/config/cas.properties:ro
-      - ./cas/All-10000005.json:/cas-overlay/etc/cas/services/All-10000005.json:ro
-      - ./cas/pom.xml:/cas-overlay/pom.xml
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/cas"]
-      interval: 1m30s
-      timeout: 30s
-      retries: 5
+      - ./docker-entrypoint-initdb.d/init.sql:/docker-entrypoint-initdb.d/init.sql
