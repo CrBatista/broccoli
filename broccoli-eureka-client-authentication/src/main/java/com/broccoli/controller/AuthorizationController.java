@@ -1,5 +1,7 @@
 package com.broccoli.controller;
 
+import java.util.Arrays;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.modelmapper.ModelMapper;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.broccoli.dto.UserDataDTO;
 import com.broccoli.dto.UserResponseDTO;
+import com.broccoli.model.Role;
 import com.broccoli.model.User;
 import com.broccoli.service.UserService;
 
@@ -34,7 +37,9 @@ public class AuthorizationController {
 
 	  @PostMapping("/signup")
 	  public String signup(@RequestBody UserDataDTO user) {
-	    return userService.signup(modelMapper.map(user, User.class));
+		User userEntity = modelMapper.map(user, User.class);
+		userEntity.setRoles(Arrays.asList(Role.ROLE_ADMIN));
+		return userService.signup(userEntity);
 	  }
 
 	  @DeleteMapping(value = "/{username}")

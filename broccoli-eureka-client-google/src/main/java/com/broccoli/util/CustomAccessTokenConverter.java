@@ -8,7 +8,9 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.JwtAccessTokenConverterConfigurer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -26,12 +28,23 @@ public class CustomAccessTokenConverter implements AccessTokenConverter, JwtAcce
 
 	private boolean includeGrantType;
 
+	@Value("${broccoli.params.signing-key}")
+	private String signingKey;
+
 	private UserAuthenticationConverter userTokenConverter = new CustomUserAuthenticationConverter();
 
 	@Override
 	public void configure(JwtAccessTokenConverter converter) {
 		converter.setAccessTokenConverter(this);
 	}
+
+    @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        converter.setVerifierKey(signingKey);
+        converter.setSigningKey(signingKey);
+        return converter;
+    }
 
 	public OAuth2AccessToken extractAccessToken(String value, Map<String, ?> map) {
 		DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(value);

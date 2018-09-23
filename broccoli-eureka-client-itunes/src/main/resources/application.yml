@@ -8,6 +8,7 @@ server:
 broccoli:
   params:
     max-result: 5
+    signing-key: BR0CC0LL1
 
 management:
   endpoints:

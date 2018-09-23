@@ -1,5 +1,12 @@
-{"properties": [{
-  "name": "broccoli.params.max-result",
-  "type": "java.lang.String",
-  "description": "The max result for searching on Google API"
-}]}
+{"properties": [
+  {
+    "name": "broccoli.params.max-result",
+    "type": "java.lang.String",
+    "description": "The max result for searching on Google API"
+  },
+  {
+    "name": "broccoli.params.signing-key",
+    "type": "java.lang.String",
+    "description": "String for reading Bearer Authorization token"
+  }
+]}

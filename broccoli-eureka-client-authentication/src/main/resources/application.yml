@@ -26,3 +26,8 @@ eureka:
       defaultZone: http://eureka:8761/eureka/
 
 check-user-scopes: true
+
+security:
+  jwt:
+    token:
+      secret-key: BR0CC0LL1
