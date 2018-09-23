@@ -1,5 +1,5 @@
 CREATE TABLE users (
-	name varchar(255) primary_key,
+	name varchar(255) PRIMARY KEY,
 	password varchar(255),
 	role varchar(255)
 );
