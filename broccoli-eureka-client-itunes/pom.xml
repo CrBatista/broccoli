@@ -19,7 +19,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<prometheus.verison>0.4.0</prometheus.verison>	
+		<prometheus.verison>0.4.0</prometheus.verison>
 	</properties>
 
 	<dependencies>
@@ -51,9 +51,8 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.prometheus</groupId>
-			<artifactId>simpleclient_spring_boot</artifactId>
-			<version>${prometheus.verison}</version>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 	</dependencies>
 

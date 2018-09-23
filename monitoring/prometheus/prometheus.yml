@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: my-project
+rule_files:
+- alert.rules
+scrape_configs:
+- job_name: google
+  scrape_interval: 5s
+  metrics_path: /actuator/prometheus
+  static_configs:
+  - targets:
+    - google:8084
+- job_name: itunes
+  scrape_interval: 5s
+  metrics_path: /actuator/prometheus
+  static_configs:
+  - targets:
+    - itunes:8085
+- job_name: eureka
+  scrape_interval: 5s
+  metrics_path: /actuator/prometheus
+  static_configs:
+  - targets:
+    - eureka:8081

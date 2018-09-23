@@ -1,5 +1,0 @@
-=============== Sep 22, 2018 (UTC) ===============
-17:06:24.506150 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-17:06:24.540704 db@open opening
-17:06:24.555951 version@stat F·[] S·0B[] Sc·[]
-17:06:24.561727 syncDir: sync /prometheus/archived_fingerprint_to_timerange: invalid argument

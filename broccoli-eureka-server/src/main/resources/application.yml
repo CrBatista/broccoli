@@ -13,3 +13,8 @@ logging:
         eureka: OFF
         discovery: OFF
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus

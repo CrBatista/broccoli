@@ -40,10 +40,23 @@ services:
     volumes:
       - ./data/grafana/:/var/lib/grafana
 
-  app:
+  google:
     build: .
     ports:
-      - 8080:8080
+      - 8084:8084
+    volumes:
+      - .:/code
+      
+  itunes:
+    build: .
+    ports:
+      - 8085:8085
+    volumes:
+      - .:/code
+      
+  eureka:
+    build: .
+    ports:
       - 8081:8081
     volumes:
       - .:/code

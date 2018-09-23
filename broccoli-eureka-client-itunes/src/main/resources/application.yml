@@ -3,8 +3,14 @@ spring:
     name: itunes-client
 
 server:
-  port: 8081
+  port: 8085
   
 broccoli:
   params:
     max-result: 5
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
