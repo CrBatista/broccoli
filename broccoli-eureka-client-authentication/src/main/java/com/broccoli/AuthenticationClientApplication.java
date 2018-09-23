@@ -18,6 +18,4 @@ public class AuthenticationClientApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthenticationClientApplication.class, args);
     }
-    
-
 }
