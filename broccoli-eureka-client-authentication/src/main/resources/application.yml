@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: authentication-client
+  datasource:
+    url: jdbc:postgresql://postgres:5432/broccoli
+    username: broccoli
+    password: broccoli
+    driver-class-name: org.postgresql.Driver
+  
+server:
+  port: 8086
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/

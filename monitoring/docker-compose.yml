@@ -63,7 +63,19 @@ services:
     volumes:
       - ../broccoli-eureka-server/:/code
 
+  authentication:
+    build: ../broccoli-eureka-client-authentication/
+    ports:
+      - 8086:8086
+    volumes:
+      - ../broccoli-eureka-client-authentication/:/code
+
   postgres:
     image: postgres:9.4
     volumes:
       - ./docker-entrypoint-initdb.d/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER:'broccoli'
+      - POSTGRES_PASSWORD:'broccoli'
+      - POSTGRES_DB:'broccoli'
+    
