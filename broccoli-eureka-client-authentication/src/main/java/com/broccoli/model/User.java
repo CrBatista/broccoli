@@ -1,65 +1,74 @@
 package com.broccoli.model;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import lombok.Data;
-
-@Data
-@Entity(name="users")
-public class User implements UserDetails {
-
-	private static final long serialVersionUID = 1L;
+@Entity(name="BROCCOLI_USER")
+public class User {
 
 	@Id
-	@Column(name="name")
-	private String name;
-	
-	@Column(name="password")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@Size(min = 4, max = 255, message = "Minimum username length: 4 characters")
+	@Column(unique = true, nullable = false)
+	private String username;
+
+	@Column(unique = true, nullable = false)
+	private String email;
+
+	@Size(min = 8, message = "Minimum password length: 8 characters")
 	private String password;
 
-	@Column(name="role")
-	private String role;
+	@ElementCollection(fetch = FetchType.EAGER)
+	List<Role> roles;
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(role));
-		return authorities;
+	public Integer getId() {
+		return id;
 	}
 
-	@Override
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getUsername() {
-		return this.getName();
+		return username;
 	}
 
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
+	public String getEmail() {
+		return email;
 	}
 
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	@Override
-	public boolean isEnabled() {
-		return true;
+	public String getPassword() {
+		return password;
 	}
-	
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 }
