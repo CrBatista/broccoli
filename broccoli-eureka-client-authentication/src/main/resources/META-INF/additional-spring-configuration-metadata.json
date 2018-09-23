@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "check-user-scopes",
+  "type": "java.lang.String",
+  "description": "Custom configurable parameter defined for checking the scope of the user"
+}]}
