@@ -58,11 +58,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kakawait</groupId>
-            <artifactId>cas-security-spring-boot-starter</artifactId>
-            <version>${project.version}</version>
-        </dependency>
 	</dependencies>
 
 	<dependencyManagement>
