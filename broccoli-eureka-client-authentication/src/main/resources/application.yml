@@ -2,10 +2,12 @@ spring:
   application:
     name: authentication-client
   datasource:
-    url: jdbc:postgresql://localhost:5432/broccoli
+    url: jdbc:postgresql://postgres:5432/broccoli
     username: broccoli
     password: broccoli
     driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   
 server:
   port: 8086
@@ -22,4 +24,3 @@ eureka:
       defaultZone: http://eureka:8761/eureka/
 
 check-user-scopes: true
-      
